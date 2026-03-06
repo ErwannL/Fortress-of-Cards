@@ -159,19 +159,45 @@ namespace FortressOfCards.Cameras
 
         private static float ReadScrollInput()
         {
+            float keyboardZoom = 0f;
 #if ENABLE_INPUT_SYSTEM
             Mouse mouse = Mouse.current;
+            Keyboard keyboard = Keyboard.current;
+
+            if (keyboard != null)
+            {
+                if (keyboard.iKey.isPressed || keyboard.numpadPlusKey.isPressed || keyboard.equalsKey.isPressed || keyboard.pageUpKey.isPressed)
+                {
+                    keyboardZoom += 1f;
+                }
+
+                if (keyboard.oKey.isPressed || keyboard.numpadMinusKey.isPressed || keyboard.minusKey.isPressed || keyboard.pageDownKey.isPressed)
+                {
+                    keyboardZoom -= 1f;
+                }
+            }
+
             if (mouse == null)
             {
-                return 0f;
+                return keyboardZoom;
             }
 
             // Input System reports larger wheel deltas on some platforms, normalize to legacy-like feel.
-            return mouse.scroll.ReadValue().y * 0.01f;
+            return (mouse.scroll.ReadValue().y * 0.01f) + keyboardZoom;
 #elif ENABLE_LEGACY_INPUT_MANAGER
-            return Input.mouseScrollDelta.y;
+            if (Input.GetKey(KeyCode.I) || Input.GetKey(KeyCode.KeypadPlus) || Input.GetKey(KeyCode.Equals) || Input.GetKey(KeyCode.PageUp))
+            {
+                keyboardZoom += 1f;
+            }
+
+            if (Input.GetKey(KeyCode.O) || Input.GetKey(KeyCode.KeypadMinus) || Input.GetKey(KeyCode.Minus) || Input.GetKey(KeyCode.PageDown))
+            {
+                keyboardZoom -= 1f;
+            }
+
+            return Input.mouseScrollDelta.y + keyboardZoom;
 #else
-            return 0f;
+            return keyboardZoom;
 #endif
         }
 
@@ -192,7 +218,7 @@ namespace FortressOfCards.Cameras
 
             GUI.Label(new Rect(24f, 22f, 330f, 22f), "Camera Controls", controlsLabelStyle);
             GUI.Label(new Rect(24f, 46f, 330f, 20f), "Move: ZQSD / WASD / Arrow Keys", controlsLabelStyle);
-            GUI.Label(new Rect(24f, 66f, 330f, 20f), "Zoom In/Out: Mouse Wheel", controlsLabelStyle);
+            GUI.Label(new Rect(24f, 66f, 330f, 20f), "Zoom: Mouse Wheel / I,O / +,-", controlsLabelStyle);
             GUI.Label(new Rect(24f, 86f, 330f, 20f), "View: Isometric 2D", controlsLabelStyle);
         }
 
