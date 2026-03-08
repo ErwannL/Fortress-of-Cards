@@ -1,4 +1,0 @@
-repository "Fortress of Cards 2026-03-06_18-26-42/Fortress of Cards@9072279595141@cloud"
-  path "/"
-    br "/main"
-    co "/main"

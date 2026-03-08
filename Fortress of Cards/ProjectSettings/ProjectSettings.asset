@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 28
-  productGUID: ae40fa5bd625cbd4eaed301599df3f68
+  productGUID: 0816c28e4ac1d5148918b6df7b34ea7f
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -682,10 +682,10 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 1
   windowsGamepadBackendHint: 0
-  cloudProjectId: fc847a9a-eec3-4c9e-b573-f82b7941e813
+  cloudProjectId: e3aeaa39-7925-42d2-97ca-c99e0292f506
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Fortress of Cards 2026-03-06_18-26-42
+  projectName: Fortress of Cards 2026-03-08_11-56-38
   organizationId: erwannlaplante_unity
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
