@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 993e5d1c1a64eef4d86fbbac6ac42468
+guid: 2f42ba73f40cc9f4da5e97f95f9926e0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5950311091775464353
-    second: sol-path_0
+      213: -8731558327558666647
+    second: sol-path-v2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sol-path_0
+      name: sol-path-v2_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1a3e7507960c39250800000000000000
-      internalID: 5950311091775464353
+      spriteID: 966034e76f543d680800000000000000
+      internalID: -8731558327558666647
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      sol-path_0: 5950311091775464353
+      sol-path-v2_0: -8731558327558666647
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
